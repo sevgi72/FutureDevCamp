@@ -1,0 +1,13 @@
+td {
+    vertical-align: top;
+    padding: 16px;
+}
+table, th, td {
+  border: 1px double black;
+}
+
+a {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top:0px;
+}
