@@ -1,13 +1,48 @@
+body{
+    background-color:rgb(230, 229, 229);
+}
 td {
     vertical-align: top;
+    padding-left:20px !important;
     padding: 16px;
 }
 table, th, td {
-  border: 1px double black;
+  border: 1px solid grey;
+  background-color:white;
+  border-radius: 5px;
 }
 
 a {
     display: inline-block;
     margin-bottom: 20px;
     margin-top:0px;
+}
+.title h1{
+    color:white;
+    font-family:"Arial Black", Gadget, sans-serif;
+}
+.title{
+    background-color:#0A1F44;
+    color:white;
+    font-family:"Arial Black", Gadget, sans-serif;
+    border-radius: 5px;
+}
+li::marker {
+    color: #0A1F44;
+}
+.title a{
+    color:white;
+    text-decoration:none;
+
+}
+.title a:hover{
+    color:rgb(0, 255, 255);
+    transition: color 0.5s;
+}
+a {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    font-weight: 300; /* Linkləri daha İNCƏ edir */
+    font-size: 15px;  /* Linklərin ölçüsünü tənzimləyir */
 }
