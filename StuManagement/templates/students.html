@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Tələbə Siyahısı</title>
+</head>
+<body>
+    <h2>Student List</h2>
+    <ul>
+        {% for student_id, name in students.items() %}
+            <li>
+                ID: {{ student_id }} - 
+                Name: <a href="/student/{{ student_id }}">{{ name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Ana səhifəyə qayıt</a></p>
+</body>
+</html>
