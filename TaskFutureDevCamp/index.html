@@ -1,38 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sevgi Farajli | Personal Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
-    <header class="hero-section">
+    <header class="hero-section" style="text-align: center;">
         <div class="container">
-            <h1>Sevgi Farajli</h1>
+
+            <h1 id="name">Sevgi Farajli</h1>
+
+            <div class="action-buttons"
+                style="margin: 20px 0; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <button id="welcome-btn" class="submit-btn"
+                    style="width: auto; padding: 10px 20px; margin: 0; background-color: #2ecc71; border-radius: 5px;">
+                    Say Hi!
+                </button>
+                <button onclick="changeColor()" class="submit-btn"
+                    style="width: auto; padding: 10px 20px; margin: 0; background-color: #34495e; border-radius: 5px;">
+                    Change Color
+                </button>
+            </div>
+
             <h3>Backend Developer | Information Security Student at UNEC</h3>
-            <p class="subtitle">Welcome to my personal portfolio! I am a 2nd-year Information Security student at UNEC (English-taught program, 2024-2028). Currently, I am leveling up my web development skills at FutureDevCamp. My ultimate career goal is to become a professional Backend / Web Developer.</p>
+            <p class="subtitle">Welcome to my personal portfolio! I am a 2nd-year Information Security student at UNEC
+                (English-taught program, 2024-2028). Currently, I am leveling up my web development skills at
+                FutureDevCamp. My ultimate career goal is to become a professional Backend / Web Developer.</p>
         </div>
     </header>
 
     <div class="container">
 
-        <section class="card">
+        <button id="toggle-about-btn" class="submit-btn" style="width: auto; margin-bottom: 15px;">
+            Hide About Me Section
+        </button>
+
+        <section class="card" id="about-section">
             <h2>About Me</h2>
-            <p>I have a huge passion for technology, coding, and cyber security. By combining the strong theoretical foundation from my university education with the practical, real-world development experience from the bootcamp, I aim to build secure, scalable, and highly optimized backend architectures.</p>
+            <p>I have a huge passion for technology, coding, and cyber security</p>
         </section>
 
         <section class="card">
             <h2>Tech Stack & Skills</h2>
             <p>Here are the core programming languages, frameworks, and tools I use in my development workflow:</p>
-            <ul class="skills-list">
+
+            <ul class="skills-list" id="skills-list">
                 <li><strong>Programming Languages:</strong> C#, Python</li>
                 <li><strong>Backend Frameworks & Architecture:</strong> .NET Core, ASP.NET Core MVC, Web API</li>
                 <li><strong>Databases:</strong> PostgreSQL, MSSQL</li>
                 <li><strong>Front-end Web Technologies:</strong> HTML5, CSS3, JavaScript (JS)</li>
                 <li><strong>DevOps & Tools:</strong> Git, GitHub, Docker, Netlify</li>
             </ul>
+
+            <button id="add-skill-btn" class="submit-btn" style="width: auto; margin-top: 15px;">Add new skill
+                </button>
+        </section>
+
+        <section class="card">
+            <h2>Projects</h2>
+            <p>A curated list of web applications and APIs I have developed so far:</p>
+
+            <ol class="projects-list" id="projects-list">
+                <li>
+                    <strong>Pustok</strong>
+                    <span class="badge mvc">MVC</span>
+                    <a href="#" target="_blank" class="project-link">View Project →</a>
+                    <p class="project-desc">ASP.NET Core MVC Web Application.</p>
+                </li>
+                <li>
+                    <strong>Juan</strong>
+                    <span class="badge mvc">MVC</span>
+                    <a href="#" target="_blank" class="project-link">View Project →</a>
+                    <p class="project-desc">ASP.NET Core MVC Web Application.</p>
+                </li>
+                <li>
+                    <strong>BankAPI</strong>
+                    <span class="badge api">API</span>
+                    <a href="#" target="_blank" class="project-link">View Project →</a>
+                    <p class="project-desc">RESTful Web API for Banking Systems.</p>
+                </li>
+                <li>
+                    <strong>Piquant</strong>
+                    <span class="badge front">Front-end</span>
+                    <a href="#" target="_blank" class="project-link">View Project →</a>
+                    <p class="project-desc">Front-end Web Application built with HTML/CSS/JS.</p>
+                </li>
+            </ol>
+
+            <button id="add-project-btn" class="submit-btn" style="width: auto; margin-top: 15px;">Add new project
+                </button>
         </section>
 
         <section class="card">
@@ -52,7 +113,7 @@
                             <td>UNEC (Azerbaijan State University of Economics)</td>
                             <td>Bachelor in Information Security (English)</td>
                             <td>2024 - 2028</td>
-                            <td class="highlight">2nd Year Student | Top 15 Scholarship Holder 🏅</td>
+                            <td class="highlight">2nd Year Student | Top 15 Scholarship Holder </td>
                         </tr>
                         <tr>
                             <td>FutureDevCamp</td>
@@ -65,64 +126,68 @@
             </div>
         </section>
 
-        <section class="card">
+        <!-- <section class="card">
             <h2>Projects</h2>
             <p>A curated list of web applications and APIs I have developed so far:</p>
             <ol class="projects-list">
                 <li>
-                    <strong>Pustok</strong> 
+                    <strong>Pustok</strong>
                     <span class="badge mvc">MVC</span>
                     <a href="#" target="_blank" class="project-link">View Project →</a>
                     <p class="project-desc">ASP.NET Core MVC Web Application.</p>
                 </li>
                 <li>
-                    <strong>Juan</strong> 
+                    <strong>Juan</strong>
                     <span class="badge mvc">MVC</span>
                     <a href="#" target="_blank" class="project-link">View Project →</a>
                     <p class="project-desc">ASP.NET Core MVC Web Application.</p>
                 </li>
                 <li>
-                    <strong>BankAPI</strong> 
+                    <strong>BankAPI</strong>
                     <span class="badge api">API</span>
                     <a href="#" target="_blank" class="project-link">View Project →</a>
                     <p class="project-desc">RESTful Web API for Banking Systems.</p>
                 </li>
                 <li>
-                    <strong>Piquant</strong> 
+                    <strong>Piquant</strong>
                     <span class="badge front">Front-end</span>
                     <a href="#" target="_blank" class="project-link">View Project →</a>
                     <p class="project-desc">Front-end Web Application built with HTML/CSS/JS.</p>
                 </li>
             </ol>
-        </section>
+        </section> -->
 
         <section class="card">
             <h2>Contact Me</h2>
-            <p>If you have any project ideas, collaboration offers, or questions, feel free to fill out the form below to get in touch:</p>
-            
+            <p>If you have any project ideas, collaboration offers, or questions, feel free to fill out the form below
+                to get in touch:</p>
+
             <form action="#" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Email Address:</label>
                     <input type="email" id="email" name="email" placeholder="name@example.com" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..."
+                        required></textarea>
                 </div>
-                
+
                 <button type="submit" class="submit-btn">Submit Message</button>
             </form>
         </section>
 
-    </div> <footer class="main-footer">
+    </div>
+    <footer class="main-footer">
         <p>&copy; 2026 Sevgi Farajli | Built with passion for Backend Development.</p>
     </footer>
-
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
