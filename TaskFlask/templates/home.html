@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Ana Səhifə</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Ana Səhifə</a> | 
+        <a href="{{ url_for('about') }}">Haqqımda</a> | 
+        <a href="{{ url_for('skills') }}">Bacarıqlar</a> | 
+        <a href="{{ url_for('profile', username='ali') }}">Profil (ali)</a> | 
+        <a href="{{ url_for('student', id=1) }}">Tələbə (ID: 1)</a> | 
+        <a href="{{ url_for('sum_numbers', a=12, b=15) }}">Bonus Cəm (12+15)</a>
+    </nav>
+    <hr>
+
+    <h1>Welcome to My Portfolio</h1>
+    <p>Naviqasiya menyusundan istifadə edərək digər tapşırıq səhifələrinə keçid edə bilərsiniz.</p>
+</body>
+</html>

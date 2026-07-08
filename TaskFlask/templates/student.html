@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Tələbə Məlumatı</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Ana Səhifə</a> | 
+        <a href="{{ url_for('about') }}">Haqqımda</a> | 
+        <a href="{{ url_for('skills') }}">Bacarıqlar</a> | 
+        <a href="{{ url_for('profile', username='ali') }}">Profil (ali)</a> | 
+        <a href="{{ url_for('student', id=1) }}">Tələbə (ID: 1)</a> | 
+        <a href="{{ url_for('sum_numbers', a=12, b=15) }}">Bonus Cəm (12+15)</a>
+    </nav>
+    <hr>
+
+    {% if name %}
+        <h1>Tələbə Məlumatı:</h1>
+        <p>Gaxil edilən ID: <strong>{{ student_id }}</strong></p>
+        <p>Tələbənin Adı: <strong>{{ name }}</strong></p>
+    {% else %}
+        <h1 style="color: red;">Student Not Found</h1>
+        <p>Daxil etdiyiniz {{ student_id }} ID-li tələbə sistemdə yoxdur.</p>
+        <p><small>Yoxlamaq üçün lüğətdə olan ID-ləri yazın (Məsələn: 1, 2, 3, 4)</small></p>
+    {% endif %}
+</body>
+</html>
