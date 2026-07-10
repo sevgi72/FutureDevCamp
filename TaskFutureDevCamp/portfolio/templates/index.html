@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.name }} | Personal Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="hero-section" style="text-align: center;">
+        <div class="container">
+            <h1 id="name">{{ profile.name }}</h1>
+
+            <div class="action-buttons" style="margin: 20px 0; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <button id="welcome-btn" class="submit-btn" style="width: auto; padding: 10px 20px; margin: 0; background-color: #2ecc71; border-radius: 5px;">
+                    Say Hi!
+                </button>
+                <button onclick="changeColor()" class="submit-btn" style="width: auto; padding: 10px 20px; margin: 0; background-color: #34495e; border-radius: 5px;">
+                    Change Color
+                </button>
+            </div>
+
+            <h3>{{ profile.profession }}</h3>
+            <p class="subtitle">Welcome to my personal portfolio! I am a 2nd-year Information Security student at UNEC (English-taught program, 2024-2028). Currently, I am leveling up my web development skills at FutureDevCamp. My ultimate career goal is to become a professional Backend / Web Developer.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <button id="toggle-about-btn" class="submit-btn" style="width: auto; margin-bottom: 15px;">
+            Hide About Me Section
+        </button>
+
+        <section class="card" id="about-section">
+            <h2>About Me</h2>
+            <p>{{ profile.about }}</p>
+        </section>
+
+        <section class="card">
+            <h2>Tech Stack & Skills</h2>
+            <p>Here are the core programming languages, frameworks, and tools I use in my development workflow:</p>
+            <ul class="skills-list" id="skills-list">
+                <li><strong>Programming Languages:</strong> C#, Python</li>
+                <li><strong>Backend Frameworks & Architecture:</strong> .NET Core, ASP.NET Core MVC, Web API</li>
+                <li><strong>Databases:</strong> PostgreSQL, MSSQL</li>
+                <li><strong>Front-end Web Technologies:</strong> HTML5, CSS3, JavaScript (JS)</li>
+                <li><strong>DevOps & Tools:</strong> Git, GitHub, Docker, Netlify</li>
+            </ul>
+            <button id="add-skill-btn" class="submit-btn" style="width: auto; margin-top: 15px;">Add new skill</button>
+        </section>
+
+        <section class="card">
+            <h2>Projects</h2>
+            <p>A curated list of web applications and APIs I have developed so far:</p>
+
+            <ol class="projects-list" id="projects-list">
+                {% for project in projects %}
+                <li>
+                    <strong>{{ project.title }}</strong>
+                    <span class="badge {% if 'mvc' in project.title.lower() %}mvc{% elif 'api' in project.title.lower() %}api{% else %}front{% endif %}">
+                        {% if 'mvc' in project.title.lower() %}MVC{% elif 'api' in project.title.lower() %}API{% else %}Project{% endif %}
+                    </span>
+                    <a href="#" target="_blank" class="project-link">View Project →</a>
+                    <p class="project-desc">{{ project.description }}</p>
+                </li>
+                {% endfor %}
+            </ol>
+
+            <button id="add-project-btn" class="submit-btn" style="width: auto; margin-top: 15px;">Add new project</button>
+        </section>
+
+        <section class="card">
+            <h2>Education</h2>
+            <div class="table-responsive">
+                <table border="0" cellpadding="10" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Institution</th>
+                            <th>Degree / Course</th>
+                            <th>Timeline</th>
+                            <th>Status / Achievements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UNEC (Azerbaijan State University of Economics)</td>
+                            <td>Bachelor in Information Security (English)</td>
+                            <td>2024 - 2028</td>
+                            <td class="highlight">2nd Year Student | Top 15 Scholarship Holder </td>
+                        </tr>
+                        <tr>
+                            <td>FutureDevCamp</td>
+                            <td>Web Development Bootcamp</td>
+                            <td>2026 - Present</td>
+                            <td>Active Coding & Project Building</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 {{ profile.name }} | Built with passion for Backend Development.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

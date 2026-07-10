@@ -1,4 +1,3 @@
-// Adın rəngini dəyişən funksiya (qlobal olaraq qalır ki, HTML-dən çağırıla bilsin)
 function changeColor() {
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'];
     let random = Math.random() * colors.length;
@@ -8,10 +7,9 @@ function changeColor() {
     }
 }
 
-// Bütün DOM hadisələrini tək bir blokda idarə edirik
 document.addEventListener("DOMContentLoaded", function () {
     
-    // --- 1. ABOUT ME GİZLƏ / GÖSTƏR ---
+    
     const toggleBtn = document.getElementById("toggle-about-btn");
     const aboutSection = document.getElementById("about-section");
 
@@ -19,15 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleBtn.addEventListener("click", function () {
             if (aboutSection.style.display === "none") {
                 aboutSection.style.display = "block";
-                toggleBtn.textContent = '"About Me" Bölməsini Gizlət';
+                toggleBtn.textContent = 'Hide About Me Section';
             } else {
                 aboutSection.style.display = "none";
-                toggleBtn.textContent = '"About Me" Bölməsini Göstər';
+                toggleBtn.textContent = 'Show About Me Section';
             }
         });
     }
 
-    // --- 2. YENİ BACARIQ ƏLAVƏ ETMƏK ---
+    
     const skillBtn = document.getElementById("add-skill-btn");
     const skillsList = document.getElementById("skills-list");
 
@@ -45,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // --- 3. YENİ LAYİHƏ ƏLAVƏ ETMƏK ---
+    
     const projectBtn = document.getElementById("add-project-btn");
     const projectsList = document.getElementById("projects-list");
 
@@ -69,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span class="badge ${badgeClass}">${projType}</span>
                 <a href="#" target="_blank" class="project-link">View Project →</a>
                 <p class="project-desc">${projDesc}</p>
-            `;
+            `;            
             projectsList.appendChild(newLi);
         });
     }
 
-    // --- 4. ZAMANA UYGUN SALAMLAMA MESAJI ---
+    
     const welcomeBtn = document.getElementById("welcome-btn");
     
     if (welcomeBtn) {
@@ -92,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 greetingMessage = "Gecəniz xeyirə qalsin";
             }
 
-            // Səhv olan dırnaqlar silindi və düzəldildi
             alert(`${greetingMessage}\nPortfolio sehifeme xos gelmisiniz!`);
         });
     }

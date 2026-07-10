@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | {{ projects|length }} Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <section class="card">
+            <h2>All Projects</h2>
+            <p>Here is the clean list of all injected projects from SQLite database:</p>
+            
+            <ol class="projects-list">
+                {% for project in projects %}
+                <li>
+                    <strong>{{ project.title }}</strong>
+                    <p class="project-desc">{{ project.description }}</p>
+                </li>
+                {% endfor %}
+            </ol>
+            <a href="/" class="submit-btn" style="display: inline-block; text-decoration: none; margin-top: 20px;">Back to Home</a>
+        </section>
+    </div>
+</body>
+</html>

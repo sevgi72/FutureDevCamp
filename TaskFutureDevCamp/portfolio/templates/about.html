@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | {{ profile.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <section class="card">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> {{ profile.name }}</p>
+            <p><strong>Profession:</strong> {{ profile.profession }}</p>
+            <p style="margin-top: 20px; font-size: 1.1rem; color: #e2e8f0;">{{ profile.about }}</p>
+            <a href="/" class="submit-btn" style="display: inline-block; text-decoration: none; margin-top: 20px;">Back to Home</a>
+        </section>
+    </div>
+</body>
+</html>
